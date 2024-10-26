@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Experience - Omar Badiane's Portfolio</title>
+    <style>
+        /* Add some custom styling for the experience stack */
+        .experience-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        /* Positioning navigation to the left */
+        .experience-navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-right: 20px;
+        }
+
+        .experience-navigation button {
+            padding: 10px 20px;
+            background-color: #e0eaf3;
+            border: 0px solid #333;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 9px; /* Makes the button rounded */
+            color: #004080;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: left; /* Align text to the left within the button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-navigation button.active {
+            background-color: #007bff; /* Blue color for the active state */
+            color: #fff;
+        }
+
+        .experience-navigation button:hover {
+            background-color: #007bff; /* Blue color on hover */
+            color: #fff;
+        }
+
+        /* Styling the experience content */
+        .experience-content {
+            display: none;
+            background-color: #e0eaf3;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title-section">
+            <h1>OMAR BADIANE</h1>
+            <p>Orléans, France</p>
+            <p>  
+                 <a href="mailto:omarbadiane1@outlook.com">omarbadiane1@outlook.com</a> ·
+                <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a> · 
+                <a href="https://zindi.africa/profiles/YOUR-ZINDI" target="_blank">Zindi</a> · 
+                <a href="https://github.com/YOUR-GITHUB" target="_blank">GitHub</a>
+            </p>
+        </div>
+        <h3>Data Scientist & Automation Specialist</h3>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="experience.html" class="nav-link">Experience</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="experience-container">
+            <div class="experience-navigation">
+                <button onclick="showExperience(0)" class="active">Automation SME at Maersk</button>
+                <button onclick="showExperience(1)">Fiber Optic Testing Agent at Sonatel</button>
+                <button onclick="showExperience(2)">Machine Learning Engineer at Omdena</button>
+                <button onclick="showExperience(3)">Data Scientist Intern at Sentel GSM</button>
+            </div>
+
+            <div id="experience-0" class="experience-content active">
+                <h3>Automation SME at Maersk (11/2023 - 09/2024)</h3>
+                <ul>
+                <li> Built an integrated app using PowerApps, Power Automate, and Power BI to streamline the check payment approval process, making it easier to track and manage approvals. Successfully convinced stakeholders, including colleagues from India who were initially hesitant, to adopt the solution.</li>
+                <li> Developed a chatbot with Power Virtual Agents to help employees navigate Workday more efficiently, based on comprehensive documentation.</li>
+                <li> Designed an interactive Power BI dashboard to give clients clear and detailed insights into the performance of their order execution.</li>
+            </ul>
+            </div>
+
+            <div id="experience-1" class="experience-content">
+                <h3>Fiber Optic Testing Agent at Sonatel (09/2020 - 09/2022)</h3>
+                <ul>
+    <li>Validated network deployments performed by subcontractors to ensure adherence to standards.</li>
+    <li>Created daily intervention reports and tracked FTTH network expansion.</li>
+    <li>Identified issues in the network and initiated corrective actions to resolve them.</li>
+</ul>
+
+            </div>
+
+            <div id="experience-2" class="experience-content">
+                <h3>Machine Learning Engineer at Omdena & Precure (09/2021 - 10/2021)</h3>
+                <ul>
+    <li>Participated in a two-month project with data experts from various countries (India, Israel, Nigeria, etc.) for the startup PRECURE.</li>
+    <li>Developed a binary classification model using the LightGBM algorithm to predict whether PRECURE's product detects elbow pain. The model I proposed was among the selected ones.</li>
+</ul>
+
+            </div>
+
+            <div id="experience-3" class="experience-content">
+                <h3>Data Scientist Intern at Sentel GSM (01/2019 - 10/2019)</h3>
+                <ul>
+    <li>Collaborated with BI and marketing teams to align objectives and maximize the impact of data analysis.</li>
+    <li>Used libraries like Pyodbc, Pandas, Scipy.stats, and Matplotlib to extract, analyze, and visualize data.</li>
+    <li>Developed and evaluated classification models such as logistic regression and random forests using Scikit-Learn.</li>
+    <li>Created a supervised learning model that significantly increased promotion penetration rates.</li>
+</ul>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Omar Badiane</p>
+    </footer>
+
+    <script>
+        // Function to show the selected experience and hide others
+        function showExperience(index) {
+            // Get all the experience content divs
+            var experiences = document.querySelectorAll('.experience-content');
+            var buttons = document.querySelectorAll('.experience-navigation button');
+            
+            // Hide all experiences and remove active button state
+            experiences.forEach(function(exp, idx) {
+                exp.classList.remove('active');
+                buttons[idx].classList.remove('active');
+            });
+            
+            // Show the selected experience
+            document.getElementById('experience-' + index).classList.add('active');
+            buttons[index].classList.add('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
