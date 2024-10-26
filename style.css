@@ -149,3 +149,29 @@ footer {
     font-weight: bold;
    
 }
+
+
+/* Smaller mobile screens (phones) */
+@media (max-width: 480px) {
+    /* Further reduce font size */
+    .title-section h1 {
+        font-size: 20px;
+    }
+
+    .title-section p {
+        font-size: 12px;
+    }
+
+    /* Compact padding for smaller screens */
+    body {
+        padding: 5px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
