@@ -211,3 +211,16 @@ footer {
 .modal-content:hover {
     cursor: zoom-out;
 }
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.click-note {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 5px;
+}

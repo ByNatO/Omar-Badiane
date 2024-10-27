@@ -74,3 +74,17 @@ document.querySelectorAll('.projects-content img').forEach(img => {
     });
 });
 
+document.querySelectorAll('.projects-content img').forEach(img => {
+    // Add click event for zoom
+    img.addEventListener('click', function() {
+        zoomImage(this);
+    });
+
+    // Add a note dynamically if it doesn't already exist
+    if (!img.nextElementSibling || !img.nextElementSibling.classList.contains('click-note')) {
+        const note = document.createElement('p');
+        note.className = 'click-note';
+        note.textContent = 'Click on the image to enlarge';
+        img.parentNode.insertBefore(note, img.nextSibling);
+    }
+});
