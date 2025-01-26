@@ -88,3 +88,11 @@ document.querySelectorAll('.projects-content img').forEach(img => {
         img.parentNode.insertBefore(note, img.nextSibling);
     }
 });
+function toggleChat() {
+    var chatbotContainer = document.getElementById('chatbot-container');
+    if (chatbotContainer.style.display === 'none' || chatbotContainer.style.display === '') {
+        chatbotContainer.style.display = 'block';
+    } else {
+        chatbotContainer.style.display = 'none';
+    }
+}
